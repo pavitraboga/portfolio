@@ -1,0 +1,162 @@
+/* --- left social rail --- */
+/* --- left social rail --- */
+.social-rail {
+    position: fixed;
+    left: 32px;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    /* pushes the whole group toward the bottom */
+    padding-bottom: 40px;
+    /* gap between line and viewport edge */
+    z-index: 50;
+    pointer-events: none;
+}
+
+.social-rail__icons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 24px;
+    pointer-events: auto;
+}
+
+.social-rail__icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    transition: color 0.25s ease, transform 0.25s ease, filter 0.25s ease;
+}
+
+.social-rail__icon:hover {
+    color: var(--accent);
+    transform: scale(1.25);
+    filter: drop-shadow(0 0 8px rgba(0, 255, 242, 0.7));
+}
+
+.social-rail__tooltip {
+    position: absolute;
+    left: 36px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-8px);
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #04121a;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    padding: 6px 14px;
+    border-radius: 999px;
+    box-shadow: var(--glow);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.social-rail__icon:hover .social-rail__tooltip {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+.social-rail__line {
+    width: 1px;
+    height: 90px;
+    background: var(--accent-border);
+}
+
+/* --- right email rail --- */
+.email-rail {
+    position: fixed;
+    right: 32px;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 40px;
+    z-index: 50;
+    pointer-events: none;
+}
+
+.email-rail__text {
+    writing-mode: vertical-rl;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.25s ease, filter 0.25s ease;
+    pointer-events: auto;
+}
+
+.email-rail__text:hover {
+    color: var(--accent);
+    filter: drop-shadow(0 0 6px rgba(0, 255, 242, 0.6));
+}
+
+.email-rail__line {
+    width: 1px;
+    height: 90px;
+    background: var(--accent-border);
+}
+
+@media (max-width: 1024px) {
+
+    .social-rail,
+    .email-rail {
+        display: none;
+    }
+}
+
+/* --- right email rail --- */
+.email-rail {
+    position: fixed;
+    right: 32px;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 50;
+    pointer-events: none;
+}
+
+.email-rail__line {
+    width: 1px;
+    flex: 1;
+    background: linear-gradient(180deg, transparent, var(--accent-border));
+}
+
+.email-rail__text {
+    writing-mode: vertical-rl;
+    padding: 20px 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.25s ease, filter 0.25s ease;
+    pointer-events: auto;
+}
+
+.email-rail__text:hover {
+    color: var(--accent);
+    filter: drop-shadow(0 0 6px rgba(0, 255, 242, 0.6));
+}
+
+/* hide on smaller screens - not enough horizontal room next to content */
+@media (max-width: 1024px) {
+
+    .social-rail,
+    .email-rail {
+        display: none;
+    }
+}

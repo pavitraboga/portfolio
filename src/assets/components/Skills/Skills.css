@@ -1,0 +1,235 @@
+.skills {
+    padding: 80px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.skills__inner {
+    width: 100%;
+    max-width: 760px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.skills__inner--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skills__eyebrow {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--accent);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    opacity: 0.85;
+}
+
+.skills__heading {
+    font-family: var(--heading);
+    font-size: 36px;
+    color: var(--text-h);
+    margin: 0 0 24px;
+}
+
+.skills__chart-wrap {
+    pointer-events: auto;
+}
+
+.skills__chart {
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+}
+
+.skills__grid-ring {
+    fill: none;
+    stroke: var(--border);
+    stroke-width: 1;
+}
+
+.skills__axis-line {
+    stroke: var(--border);
+    stroke-width: 1;
+}
+
+/* skill-level polygon */
+.skills__data-polygon {
+    fill: rgba(0, 255, 242, 0.12);
+    stroke: var(--accent);
+    stroke-width: 2;
+    transform-origin: center;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s ease;
+}
+
+.skills__data-polygon--visible {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* branch lines */
+.skills__branch-line {
+    stroke: var(--accent-border);
+    stroke-width: 1;
+    stroke-dasharray: 4 4;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.skills__branch-line--visible {
+    opacity: 0.8;
+}
+
+/* category nodes */
+.skills__cat-node {
+    opacity: 0;
+    transform: scale(0.6);
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.skills__cat-node--visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.skills__cat-dot {
+    fill: var(--accent2);
+    filter: drop-shadow(0 0 4px var(--accent2));
+}
+
+.skills__cat-label {
+    fill: var(--text-h);
+    font-family: var(--heading);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* child tech nodes */
+.skills__child-node {
+    opacity: 0;
+    transform: scale(0.5);
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.skills__child-node--visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.skills__child-dot {
+    fill: var(--accent);
+}
+
+.skills__child-label {
+    fill: var(--text);
+    font-family: var(--mono);
+    font-size: 11px;
+}
+
+@media (max-width: 640px) {
+    .skills__heading {
+        font-size: 28px;
+    }
+
+    .skills__cat-label {
+        font-size: 12px;
+    }
+
+    .skills__child-label {
+        font-size: 9px;
+    }
+}
+
+/* --- mobile fallback list --- */
+.skills__mobile-list {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+    position: relative;
+    padding-left: 20px;
+}
+
+.skills__mobile-list::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    left: 5px;
+    width: 1px;
+    background: linear-gradient(180deg, var(--accent-border), transparent);
+}
+
+.skills__mobile-item {
+    position: relative;
+    padding: 14px 0;
+    opacity: 0;
+    transform: translateX(-16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.skills__mobile-item--visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.skills__mobile-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.skills__mobile-dot {
+    position: absolute;
+    left: -20px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent2);
+    box-shadow: 0 0 6px var(--accent2);
+}
+
+.skills__mobile-cat {
+    font-family: var(--heading);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-h);
+}
+
+.skills__mobile-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skills__mobile-pill {
+    padding: 5px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--accent-border);
+    background: var(--accent-bg);
+    color: var(--accent);
+    font-size: 12px;
+    font-family: var(--mono);
+}
+
+/* toggle: below 480px show the list, hide the radar chart */
+@media (max-width: 480px) {
+    .skills__chart {
+        display: none;
+    }
+
+    .skills__mobile-list {
+        display: flex;
+    }
+}

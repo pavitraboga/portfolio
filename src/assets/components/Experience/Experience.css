@@ -1,0 +1,200 @@
+.experience {
+    padding: 100px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.experience__inner {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.experience__inner--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.experience__eyebrow {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--accent);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    opacity: 0.85;
+}
+
+.experience__heading {
+    font-family: var(--heading);
+    font-size: 36px;
+    color: var(--text-h);
+    margin: 0 0 90px;
+}
+
+/* --- horizontal timeline --- */
+.experience__timeline {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 340px;
+    pointer-events: auto;
+}
+
+.experience__line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-border), var(--accent-border), transparent);
+    transform: translateY(-50%);
+}
+
+.experience__item {
+    position: relative;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.experience__item--top {
+    transform: translateY(20px);
+}
+
+.experience__item--bottom {
+    transform: translateY(-20px);
+    flex-direction: column-reverse;
+}
+
+.experience__inner--visible .experience__item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* card */
+.experience__card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 20px;
+    text-align: left;
+    width: 100%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience__card:hover {
+    border-color: var(--accent-border);
+    box-shadow: var(--glow);
+}
+
+.experience__period {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    border: 1px solid var(--accent-border);
+    background: var(--accent-bg);
+    border-radius: 999px;
+    padding: 3px 12px;
+    margin-bottom: 12px;
+}
+
+.experience__role {
+    font-family: var(--heading);
+    font-size: 17px;
+    color: var(--text-h);
+    margin: 0 0 4px;
+}
+
+.experience__org {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--accent2);
+    margin: 0 0 2px;
+    font-weight: 600;
+}
+
+.experience__location {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--text);
+    opacity: 0.7;
+    margin: 0 0 12px;
+}
+
+.experience__desc {
+    font-family: var(--sans);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text);
+    margin: 0;
+}
+
+/* connector between card and node */
+.experience__connector {
+    width: 2px;
+    height: 40px;
+    background: var(--accent-border);
+}
+
+/* node on the line */
+.experience__node {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    box-shadow: var(--glow);
+    flex-shrink: 0;
+}
+
+.experience__node-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent2);
+}
+
+/* --- responsive: stack vertically on small screens --- */
+@media (max-width: 860px) {
+    .experience__timeline {
+        flex-direction: column;
+        gap: 60px;
+        min-height: auto;
+    }
+
+    .experience__line {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        right: auto;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, var(--accent-border), var(--accent-border), transparent);
+    }
+
+    .experience__item,
+    .experience__item--top,
+    .experience__item--bottom {
+        flex-direction: column;
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .experience__connector {
+        width: 2px;
+        height: 30px;
+    }
+}
