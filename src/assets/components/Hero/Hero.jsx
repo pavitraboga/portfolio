@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./Hero.css";
 
-const NAME = "PAVITRA BOGA";
+const NAME = "Pavitra Boga";
 const ROLE = "Full-Stack Developer & AI/ML Enthusiast";
 const GLITCH_CHARS = "!<>-_\\/[]{}—=+*^?#________";
 

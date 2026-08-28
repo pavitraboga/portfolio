@@ -11,7 +11,7 @@ const PROJECTS = [
             "An accessibility-first hiring platform for Persons with Disabilities, featuring High Contrast Mode, Voice Search, Read Aloud, role-based dashboards, and skill training modules — built with Firebase for secure, scalable authentication and data handling.",
         tech: ["Firebase", "JavaScript", "HTML/CSS", "ChromeVox", "ARIA"],
         live: "https://access-hire-wine.vercel.app/",
-        github: "https://github.com/itspb-ux/AccessHire",
+        github: "https://github.com/pavitraboga/AccessHire",
     },
     {
         id: "vyuha-ai",
@@ -31,7 +31,7 @@ const PROJECTS = [
             "A real-time IoT safety system that detects gas leaks and fire using MQ-5 and flame sensors, triggers a local alarm and LCD warning, sends instant SMS alerts via GSM, and streams live sensor data to a ThingSpeak cloud dashboard for remote monitoring.",
         tech: ["Arduino UNO", "ESP32", "GSM", "ThingSpeak", "Arduino C++"],
         live: null,
-        github: "https://github.com/itspb-ux/IOT-Based-Fire-and-Gas-Detector",
+        github: "https://github.com/pavitraboga/IOT-Based-Fire-and-Gas-Detector",
     },
 ];
 

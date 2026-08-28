@@ -3,7 +3,7 @@ export default function SocialRail() {
         <div className="social-rail">
             <div className="social-rail__icons">
 
-                <a href="https://github.com/itspb-ux"
+                <a href="https://github.com/pavitraboga"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-rail__icon"
