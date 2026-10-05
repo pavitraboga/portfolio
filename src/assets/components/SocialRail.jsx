@@ -40,7 +40,7 @@ export default function SocialRail() {
                 </a>
 
 
-                <a href="/resume.pdf"
+                <a href="/portfolio/resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-rail__icon"
