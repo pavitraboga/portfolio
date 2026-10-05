@@ -40,12 +40,13 @@ export default function SocialRail() {
                 </a>
 
 
-                <a href="/portfolio/resume.pdf"
+                <a
+                    href={`${import.meta.env.BASE_URL}resume.pdf`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-rail__icon"
                     aria-label="Download Resume"
-                >
+>
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                         <path d="M12 3a1 1 0 0 1 1 1v9.59l3.3-3.3a1 1 0 1 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.42l3.3 3.3V4a1 1 0 0 1 1-1ZM5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Z" />
                     </svg>
